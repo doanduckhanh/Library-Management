@@ -51,7 +51,6 @@ C:\Users\khanh doan\Desktop\Project PRN\Library-Management\Library Management\Li
 C:\Users\khanh doan\Desktop\Project PRN\Library-Management\Library Management\Library Management\bin\Debug\net5.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 C:\Users\khanh doan\Desktop\Project PRN\Library-Management\Library Management\Library Management\bin\Debug\net5.0-windows\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\khanh doan\Desktop\Project PRN\Library-Management\Library Management\Library Management\obj\Debug\net5.0-windows\Library Management.csproj.AssemblyReference.cache
-C:\Users\khanh doan\Desktop\Project PRN\Library-Management\Library Management\Library Management\obj\Debug\net5.0-windows\Library_Management.Form1.resources
 C:\Users\khanh doan\Desktop\Project PRN\Library-Management\Library Management\Library Management\obj\Debug\net5.0-windows\Library Management.csproj.GenerateResource.cache
 C:\Users\khanh doan\Desktop\Project PRN\Library-Management\Library Management\Library Management\obj\Debug\net5.0-windows\Library Management.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\khanh doan\Desktop\Project PRN\Library-Management\Library Management\Library Management\obj\Debug\net5.0-windows\Library Management.AssemblyInfoInputs.cache
@@ -63,3 +62,7 @@ C:\Users\khanh doan\Desktop\Project PRN\Library-Management\Library Management\Li
 C:\Users\khanh doan\Desktop\Project PRN\Library-Management\Library Management\Library Management\obj\Debug\net5.0-windows\Library Management.pdb
 C:\Users\khanh doan\Desktop\Project PRN\Library-Management\Library Management\Library Management\obj\Debug\net5.0-windows\Library Management.genruntimeconfig.cache
 C:\Users\khanh doan\Desktop\Project PRN\Library-Management\Library Management\Library Management\obj\Debug\net5.0-windows\ref\Library Management.dll
+C:\Users\khanh doan\Desktop\Project PRN\Library-Management\Library Management\Library Management\obj\Debug\net5.0-windows\Library_Management.BookDetail.resources
+C:\Users\khanh doan\Desktop\Project PRN\Library-Management\Library Management\Library Management\obj\Debug\net5.0-windows\Library_Management.Properties.Resources.resources
+C:\Users\khanh doan\Desktop\Project PRN\Library-Management\Library Management\Library Management\obj\Debug\net5.0-windows\Library_Management.BookList.resources
+C:\Users\khanh doan\Desktop\Project PRN\Library-Management\Library Management\Library Management\obj\Debug\net5.0-windows\Library_Management.CustomerList.resources
