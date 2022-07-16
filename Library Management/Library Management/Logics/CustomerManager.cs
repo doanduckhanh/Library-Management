@@ -16,7 +16,7 @@ namespace Library_Management.Logics
             LibraryDbContext db = new LibraryDbContext();
         }
 
-        public List<Customer> GetBookList()
+        public List<Customer> GetCusList()
         {
             return db.Customers.ToList();
         }
