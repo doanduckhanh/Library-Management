@@ -9,6 +9,16 @@ namespace Library_Management.Logics
 {
     class BookManager
     {
-        
+        LibraryDbContext db = new LibraryDbContext();
+
+        public BookManager()
+        {
+            LibraryDbContext db = new LibraryDbContext();
+        }
+
+        public List<Book> GetBookList()
+        {
+            return db.Books.ToList();
+        }
     }
 }

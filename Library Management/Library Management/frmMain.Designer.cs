@@ -42,11 +42,11 @@
             this.tbAddNew = new System.Windows.Forms.Button();
             this.pnBook = new System.Windows.Forms.Panel();
             this.pnCustomer = new System.Windows.Forms.Panel();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.tbSearchCustomer = new System.Windows.Forms.TextBox();
-            this.btSearchCus = new System.Windows.Forms.Button();
-            this.btImportCus = new System.Windows.Forms.Button();
             this.btAddNewCus = new System.Windows.Forms.Button();
+            this.btImportCus = new System.Windows.Forms.Button();
+            this.btSearchCus = new System.Windows.Forms.Button();
+            this.tbSearchCustomer = new System.Windows.Forms.TextBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.pnBook.SuspendLayout();
@@ -91,6 +91,7 @@
             this.btBookList.TabIndex = 0;
             this.btBookList.Text = "Book List";
             this.btBookList.UseVisualStyleBackColor = true;
+            this.btBookList.Click += new System.EventHandler(this.btBookList_Click);
             // 
             // dataGridView1
             // 
@@ -192,31 +193,14 @@
             this.pnCustomer.Size = new System.Drawing.Size(1186, 797);
             this.pnCustomer.TabIndex = 10;
             // 
-            // dataGridView2
+            // btAddNewCus
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(12, 107);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 29;
-            this.dataGridView2.Size = new System.Drawing.Size(1032, 687);
-            this.dataGridView2.TabIndex = 0;
-            // 
-            // tbSearchCustomer
-            // 
-            this.tbSearchCustomer.Location = new System.Drawing.Point(313, 31);
-            this.tbSearchCustomer.Name = "tbSearchCustomer";
-            this.tbSearchCustomer.Size = new System.Drawing.Size(162, 27);
-            this.tbSearchCustomer.TabIndex = 1;
-            // 
-            // btSearchCus
-            // 
-            this.btSearchCus.Location = new System.Drawing.Point(481, 31);
-            this.btSearchCus.Name = "btSearchCus";
-            this.btSearchCus.Size = new System.Drawing.Size(94, 29);
-            this.btSearchCus.TabIndex = 2;
-            this.btSearchCus.Text = "Search";
-            this.btSearchCus.UseVisualStyleBackColor = true;
+            this.btAddNewCus.Location = new System.Drawing.Point(1070, 200);
+            this.btAddNewCus.Name = "btAddNewCus";
+            this.btAddNewCus.Size = new System.Drawing.Size(94, 29);
+            this.btAddNewCus.TabIndex = 4;
+            this.btAddNewCus.Text = "Add New";
+            this.btAddNewCus.UseVisualStyleBackColor = true;
             // 
             // btImportCus
             // 
@@ -227,14 +211,31 @@
             this.btImportCus.Text = "Import";
             this.btImportCus.UseVisualStyleBackColor = true;
             // 
-            // btAddNewCus
+            // btSearchCus
             // 
-            this.btAddNewCus.Location = new System.Drawing.Point(1070, 200);
-            this.btAddNewCus.Name = "btAddNewCus";
-            this.btAddNewCus.Size = new System.Drawing.Size(94, 29);
-            this.btAddNewCus.TabIndex = 4;
-            this.btAddNewCus.Text = "Add New";
-            this.btAddNewCus.UseVisualStyleBackColor = true;
+            this.btSearchCus.Location = new System.Drawing.Point(481, 31);
+            this.btSearchCus.Name = "btSearchCus";
+            this.btSearchCus.Size = new System.Drawing.Size(94, 29);
+            this.btSearchCus.TabIndex = 2;
+            this.btSearchCus.Text = "Search";
+            this.btSearchCus.UseVisualStyleBackColor = true;
+            // 
+            // tbSearchCustomer
+            // 
+            this.tbSearchCustomer.Location = new System.Drawing.Point(313, 31);
+            this.tbSearchCustomer.Name = "tbSearchCustomer";
+            this.tbSearchCustomer.Size = new System.Drawing.Size(162, 27);
+            this.tbSearchCustomer.TabIndex = 1;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(12, 107);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 29;
+            this.dataGridView2.Size = new System.Drawing.Size(1032, 687);
+            this.dataGridView2.TabIndex = 0;
             // 
             // frmMain
             // 

@@ -1,4 +1,5 @@
-﻿using Library_Management.Models;
+﻿using Library_Management.Logics;
+using Library_Management.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,13 +18,9 @@ namespace Library_Management
         {
             InitializeComponent();
         }
-
-        private void Form1_Load(object sender, EventArgs e)
+        private void LDGV()
         {
-            LibraryDbContext db = new LibraryDbContext();
-            //Data for comboBox Category
-            cbCategory.DataSource = db.Categories.Select(x => x.CateName).ToList();
-            //Data for DataGridViewBook
+            BookManager bookManager = new BookManager();
             dataGridView1.AutoGenerateColumns = false;
 
             dataGridView1.Columns.Add("namecol", "Id");
@@ -40,7 +37,15 @@ namespace Library_Management
             dataGridView1.Columns["malecol"].DataPropertyName = "EntryDate";
             dataGridView1.Columns.Add("malecol", "Price");
             dataGridView1.Columns["malecol"].DataPropertyName = "Price";
-            dataGridView1.DataSource = db.Books.ToList();
+            dataGridView1.DataSource = bookManager.GetBookList();
+        }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            LibraryDbContext db = new LibraryDbContext();
+            //Data for comboBox Category
+            cbCategory.DataSource = db.Categories.Select(x => x.CateName).ToList();
+            //Data for DataGridViewBook
+            LDGV();
 
             //Panel 
             pnBook.Visible = true;
@@ -65,6 +70,12 @@ namespace Library_Management
         {
             frmBookDetail bookDetail = new frmBookDetail();
             bookDetail.ShowDialog();
+        }
+
+        private void btBookList_Click(object sender, EventArgs e)
+        {
+            pnBook.Visible = true;
+            pnCustomer.Visible = false;
         }
     }
 }

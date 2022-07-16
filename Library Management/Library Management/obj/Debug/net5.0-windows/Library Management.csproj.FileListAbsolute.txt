@@ -62,7 +62,6 @@ C:\Users\khanh doan\Desktop\Project PRN\Library-Management\Library Management\Li
 C:\Users\khanh doan\Desktop\Project PRN\Library-Management\Library Management\Library Management\obj\Debug\net5.0-windows\Library Management.pdb
 C:\Users\khanh doan\Desktop\Project PRN\Library-Management\Library Management\Library Management\obj\Debug\net5.0-windows\Library Management.genruntimeconfig.cache
 C:\Users\khanh doan\Desktop\Project PRN\Library-Management\Library Management\Library Management\obj\Debug\net5.0-windows\ref\Library Management.dll
-C:\Users\khanh doan\Desktop\Project PRN\Library-Management\Library Management\Library Management\obj\Debug\net5.0-windows\Library_Management.BookDetail.resources
 C:\Users\khanh doan\Desktop\Project PRN\Library-Management\Library Management\Library Management\obj\Debug\net5.0-windows\Library_Management.Properties.Resources.resources
-C:\Users\khanh doan\Desktop\Project PRN\Library-Management\Library Management\Library Management\obj\Debug\net5.0-windows\Library_Management.BookList.resources
-C:\Users\khanh doan\Desktop\Project PRN\Library-Management\Library Management\Library Management\obj\Debug\net5.0-windows\Library_Management.CustomerList.resources
+C:\Users\khanh doan\Desktop\Project PRN\Library-Management\Library Management\Library Management\obj\Debug\net5.0-windows\Library_Management.frmBookDetail.resources
+C:\Users\khanh doan\Desktop\Project PRN\Library-Management\Library Management\Library Management\obj\Debug\net5.0-windows\Library_Management.frmMain.resources
