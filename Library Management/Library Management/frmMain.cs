@@ -66,7 +66,21 @@ namespace Library_Management
             dataGridView2.Columns["emailcol"].DataPropertyName = "Email";
             dataGridView2.DataSource = customerManager.GetCusList();
             //Load Data for Order
-
+            OrderManager orderManager = new OrderManager();
+            dataGridView3.AutoGenerateColumns = false;
+            dataGridView3.Columns.Add("idcol", "Id");
+            dataGridView3.Columns["idcol"].DataPropertyName = "OrID";
+            dataGridView3.Columns.Add("cusidcol", "CustomerID");
+            dataGridView3.Columns["cusidcol"].DataPropertyName = "CusID";
+            dataGridView3.Columns.Add("bookidcol", "BookID");
+            dataGridView3.Columns["bookidcol"].DataPropertyName = "BookID";
+            dataGridView3.Columns.Add("startcol", "StartDate");
+            dataGridView3.Columns["startcol"].DataPropertyName = "StartDat";
+            dataGridView3.Columns.Add("endcol", "EndDate");
+            dataGridView3.Columns["endcol"].DataPropertyName = "EndDate";
+            dataGridView3.Columns.Add("statuscol", "Status");
+            dataGridView3.Columns["statuscol"].DataPropertyName = "Status";
+            dataGridView3.DataSource = orderManager.GetOrderList();
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -135,19 +149,29 @@ namespace Library_Management
         }
         private void btBookList_Click(object sender, EventArgs e)
         {
+            pnCustomer.Visible = false;
+            pnOrder.Visible = false;
             pnBook.BringToFront();
             pnBook.Show();
         }
         private void btCustomerList_Click(object sender, EventArgs e)
         {
+            pnBook.Visible = false;
             pnOrder.Visible = false;
             pnCustomer.BringToFront();
             pnCustomer.Show();
         }
         private void btOrderList_Click(object sender, EventArgs e)
-        {
+        {   pnBook.Visible = false;
+            pnOrder.Visible = true;
             pnOrder.BringToFront();
             pnOrder.Show();
+        }
+
+        private void btAddNewCus_Click(object sender, EventArgs e)
+        {
+            frmCustomerDetail frmCustomerDetail = new frmCustomerDetail();
+            frmCustomerDetail.ShowDialog();
         }
     }
 }
