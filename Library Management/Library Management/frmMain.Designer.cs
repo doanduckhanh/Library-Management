@@ -42,6 +42,10 @@
             this.tbAddNew = new System.Windows.Forms.Button();
             this.pnBook = new System.Windows.Forms.Panel();
             this.pnCustomer = new System.Windows.Forms.Panel();
+            this.pnOrder = new System.Windows.Forms.Panel();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btAddNewCus = new System.Windows.Forms.Button();
             this.btImportCus = new System.Windows.Forms.Button();
             this.btSearchCus = new System.Windows.Forms.Button();
@@ -51,6 +55,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.pnBook.SuspendLayout();
             this.pnCustomer.SuspendLayout();
+            this.pnOrder.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,6 +78,7 @@
             this.btOrderList.TabIndex = 2;
             this.btOrderList.Text = "Order List";
             this.btOrderList.UseVisualStyleBackColor = true;
+            this.btOrderList.Click += new System.EventHandler(this.btOrderList_Click);
             // 
             // btCustomerList
             // 
@@ -183,6 +190,9 @@
             // 
             // pnCustomer
             // 
+            this.pnCustomer.Controls.Add(this.pnOrder);
+            this.pnCustomer.Controls.Add(this.label2);
+            this.pnCustomer.Controls.Add(this.comboBox1);
             this.pnCustomer.Controls.Add(this.btAddNewCus);
             this.pnCustomer.Controls.Add(this.btImportCus);
             this.pnCustomer.Controls.Add(this.btSearchCus);
@@ -193,9 +203,45 @@
             this.pnCustomer.Size = new System.Drawing.Size(1186, 797);
             this.pnCustomer.TabIndex = 10;
             // 
+            // pnOrder
+            // 
+            this.pnOrder.Controls.Add(this.dataGridView3);
+            this.pnOrder.Location = new System.Drawing.Point(3, 3);
+            this.pnOrder.Name = "pnOrder";
+            this.pnOrder.Size = new System.Drawing.Size(1180, 791);
+            this.pnOrder.TabIndex = 8;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(9, 104);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowHeadersWidth = 51;
+            this.dataGridView3.RowTemplate.Height = 29;
+            this.dataGridView3.Size = new System.Drawing.Size(1032, 663);
+            this.dataGridView3.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(513, 29);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(69, 25);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Sort By";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(588, 30);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(118, 28);
+            this.comboBox1.TabIndex = 6;
+            // 
             // btAddNewCus
             // 
-            this.btAddNewCus.Location = new System.Drawing.Point(1070, 200);
+            this.btAddNewCus.Location = new System.Drawing.Point(1070, 180);
             this.btAddNewCus.Name = "btAddNewCus";
             this.btAddNewCus.Size = new System.Drawing.Size(94, 29);
             this.btAddNewCus.TabIndex = 4;
@@ -210,21 +256,23 @@
             this.btImportCus.TabIndex = 3;
             this.btImportCus.Text = "Import";
             this.btImportCus.UseVisualStyleBackColor = true;
+            this.btImportCus.Click += new System.EventHandler(this.btImportCus_Click);
             // 
             // btSearchCus
             // 
-            this.btSearchCus.Location = new System.Drawing.Point(481, 31);
+            this.btSearchCus.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btSearchCus.Location = new System.Drawing.Point(307, 32);
             this.btSearchCus.Name = "btSearchCus";
             this.btSearchCus.Size = new System.Drawing.Size(94, 29);
             this.btSearchCus.TabIndex = 2;
             this.btSearchCus.Text = "Search";
-            this.btSearchCus.UseVisualStyleBackColor = true;
+            this.btSearchCus.UseVisualStyleBackColor = false;
             // 
             // tbSearchCustomer
             // 
-            this.tbSearchCustomer.Location = new System.Drawing.Point(313, 31);
+            this.tbSearchCustomer.Location = new System.Drawing.Point(93, 32);
             this.tbSearchCustomer.Name = "tbSearchCustomer";
-            this.tbSearchCustomer.Size = new System.Drawing.Size(162, 27);
+            this.tbSearchCustomer.Size = new System.Drawing.Size(208, 27);
             this.tbSearchCustomer.TabIndex = 1;
             // 
             // dataGridView2
@@ -254,6 +302,8 @@
             this.pnBook.PerformLayout();
             this.pnCustomer.ResumeLayout(false);
             this.pnCustomer.PerformLayout();
+            this.pnOrder.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
@@ -280,5 +330,9 @@
         private System.Windows.Forms.Button btImportCus;
         private System.Windows.Forms.Button btSearchCus;
         private System.Windows.Forms.TextBox tbSearchCustomer;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Panel pnOrder;
+        private System.Windows.Forms.DataGridView dataGridView3;
     }
 }

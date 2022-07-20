@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "XeKOiZsAetH8LONAXvyPCiLsu77fE1p5xcjsHXEHxXfM6gEkSr63ToOqravonRwD9Y2VzGFgG1q53io1rVsTIw==",
+  "dgSpecHash": "f7quHSHAsBVf4iA+cXtG+TNzKQ6pPLzcxNkhHLJSdhK1aB7jm+h1kgl3BPQbdJkoXr2jNSzPdH+z9VdtcXpayg==",
   "success": true,
   "projectFilePath": "C:\\Users\\khanh doan\\Desktop\\Project PRN\\Library-Management\\Library Management\\Library Management\\Library Management.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\khanh doan\\.nuget\\packages\\exceldatareader\\3.6.0\\exceldatareader.3.6.0.nupkg.sha512",
+    "C:\\Users\\khanh doan\\.nuget\\packages\\exceldatareader.dataset\\3.6.0\\exceldatareader.dataset.3.6.0.nupkg.sha512",
     "C:\\Users\\khanh doan\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\khanh doan\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\khanh doan\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
