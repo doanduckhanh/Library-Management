@@ -20,5 +20,9 @@ namespace Library_Management.Logics
         {
             return db.Books.ToList();
         }
+        public void AddBook(Book a)
+        {
+            db.Books.Add(a);
+        }
     }
 }

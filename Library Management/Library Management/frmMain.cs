@@ -16,34 +16,15 @@ namespace Library_Management
 {
     public partial class frmMain : Form
     {
-        List<Panel> listPanel = new List<Panel>();
-        int index;
         public frmMain()
         {
             InitializeComponent();
         }
         private void LDGV()
         {
-            //Load Data for Book
-            BookManager bookManager = new BookManager();
-            dataGridView1.AutoGenerateColumns = false;
-            dataGridView1.Columns.Add("idcol", "Id");
-            dataGridView1.Columns["idcol"].DataPropertyName = "ID";
-            dataGridView1.Columns.Add("namecol", "Name");
-            dataGridView1.Columns["namecol"].DataPropertyName = "Name";
-            dataGridView1.Columns.Add("catecol", "Category");
-            dataGridView1.Columns["catecol"].DataPropertyName = "CategoryID";
-            dataGridView1.Columns.Add("authorcol", "Author");
-            dataGridView1.Columns["authorcol"].DataPropertyName = "Author";
-            dataGridView1.Columns.Add("numcol", "Number");
-            dataGridView1.Columns["numcol"].DataPropertyName = "Number";
-            dataGridView1.Columns.Add("datecol", "EntryDate");
-            dataGridView1.Columns["datecol"].DataPropertyName = "EntryDate";
-            dataGridView1.Columns.Add("pricecol", "Price");
-            dataGridView1.Columns["pricecol"].DataPropertyName = "Price";
-            dataGridView1.DataSource = bookManager.GetBookList();
+            
 
-            //Load Data for Customer
+            /*//Load Data for Customer
             CustomerManager customerManager = new CustomerManager();
             dataGridView2.AutoGenerateColumns = false;
             dataGridView2.Columns.Add("idcol", "Id");
@@ -80,21 +61,21 @@ namespace Library_Management
             dataGridView3.Columns["endcol"].DataPropertyName = "EndDate";
             dataGridView3.Columns.Add("statuscol", "Status");
             dataGridView3.Columns["statuscol"].DataPropertyName = "Status";
-            dataGridView3.DataSource = orderManager.GetOrderList();
+            dataGridView3.DataSource = orderManager.GetOrderList();*/
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            LibraryDbContext db = new LibraryDbContext();
-            //Data for comboBox Category
-            cbCategory.DataSource = db.Categories.Select(x => x.CateName).ToList();
-            //Data for DataGridViewBook
-            LDGV();
-            //Panel 
-            pnBook.BringToFront();
-            pnBook.Show();
-
+            
         }
-
+        private void AddForm(Form f)
+        {
+            f.TopLevel = false;
+            f.AutoScroll = true;
+            f.FormBorderStyle = FormBorderStyle.None;
+            f.Dock = DockStyle.Fill;
+            this.pnBook.Controls.Add(f);
+            f.Show();
+        }
         private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -112,34 +93,7 @@ namespace Library_Management
 
         private void btImportCus_Click(object sender, EventArgs e)
         {
-            using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "Excel Workbook|*.xlsx|Excel Workbook 97-2003|*.xls", ValidateNames = true })
-            {
-                if (ofd.ShowDialog() == DialogResult.OK)
-                {
-                    using (var stream = File.Open(ofd.FileName, FileMode.Open, FileAccess.Read))
-                    {
-                        IExcelDataReader reader;
-                        if (ofd.FilterIndex == 2)
-                        {
-                            reader = ExcelReaderFactory.CreateBinaryReader(stream);
-                        }
-                        else
-                        {
-                            reader = ExcelReaderFactory.CreateOpenXmlReader(stream);
-                        }
-
-                        dataGridView1.DataSource = reader.AsDataSet(new ExcelDataSetConfiguration()
-                        {
-                            ConfigureDataTable = (_) => new ExcelDataTableConfiguration()
-                            {
-                                UseHeaderRow = true
-                            }
-                        });
-                        reader.Close();
-
-                    }
-                }
-            }
+            
 
         }
 
@@ -147,31 +101,18 @@ namespace Library_Management
         {
 
         }
-        private void btBookList_Click(object sender, EventArgs e)
+       
+
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            pnCustomer.Visible = false;
-            pnOrder.Visible = false;
-            pnBook.BringToFront();
-            pnBook.Show();
-        }
-        private void btCustomerList_Click(object sender, EventArgs e)
-        {
-            pnBook.Visible = false;
-            pnOrder.Visible = false;
-            pnCustomer.BringToFront();
-            pnCustomer.Show();
-        }
-        private void btOrderList_Click(object sender, EventArgs e)
-        {   pnBook.Visible = false;
-            pnOrder.Visible = true;
-            pnOrder.BringToFront();
-            pnOrder.Show();
+            Application.Exit();
         }
 
-        private void btAddNewCus_Click(object sender, EventArgs e)
+        private void bookToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmCustomerDetail frmCustomerDetail = new frmCustomerDetail();
-            frmCustomerDetail.ShowDialog();
+            frmBookList f = new frmBookList();
+            AddForm(f);
         }
     }
 }
