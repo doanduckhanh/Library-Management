@@ -1,6 +1,6 @@
 ﻿namespace Library_Management
 {
-    partial class frmBookDetail
+    partial class frmCusDetail
     {
         /// <summary>
         /// Required designer variable.

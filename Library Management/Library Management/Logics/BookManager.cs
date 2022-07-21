@@ -23,6 +23,24 @@ namespace Library_Management.Logics
         public void AddBook(Book a)
         {
             db.Books.Add(a);
+            db.SaveChanges();
+        }
+        public void UpdateBook(Book a)
+        {
+            Book book = db.Books.FirstOrDefault(x => x.Id == a.Id);
+            book.Id = a.Id;
+            book.Name = a.Name;
+            book.CategoryId = a.CategoryId;
+            book.Author = a.Author;
+            book.Number = a.Number;
+            book.EntryDate = a.EntryDate;
+            book.Price = a.Price;
+            db.SaveChanges ();
+        }
+        public void DeleteBook(Book a)
+        {
+            db.Books.RemoveRange(a);
+            db.SaveChanges() ;
         }
     }
 }

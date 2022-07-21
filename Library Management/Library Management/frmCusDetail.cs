@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Library_Management
 {
-    public partial class frmBookDetail : Form
+    public partial class frmCusDetail : Form
     {
-        public frmBookDetail()
+        public frmCusDetail()
         {
             InitializeComponent();
         }

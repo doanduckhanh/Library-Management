@@ -44,18 +44,22 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.tbID = new System.Windows.Forms.TextBox();
+            this.tbTitle = new System.Windows.Forms.TextBox();
+            this.cbCategory = new System.Windows.Forms.ComboBox();
+            this.tbAuthor = new System.Windows.Forms.TextBox();
+            this.dtpEntryDate = new System.Windows.Forms.DateTimePicker();
+            this.nudPrice = new System.Windows.Forms.NumericUpDown();
+            this.nudNumber = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.cbSearchCate = new System.Windows.Forms.ComboBox();
+            this.btAdd = new System.Windows.Forms.Button();
+            this.btUpdate = new System.Windows.Forms.Button();
+            this.btDelete = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNumber)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -68,6 +72,7 @@
             this.dataGridView1.RowTemplate.Height = 29;
             this.dataGridView1.Size = new System.Drawing.Size(973, 713);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // label1
             // 
@@ -97,6 +102,14 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Id",
+            "Name",
+            "Category",
+            "Author",
+            "Number",
+            "EntryDate",
+            "Price"});
             this.comboBox1.Location = new System.Drawing.Point(247, 26);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(107, 28);
@@ -200,70 +213,71 @@
             this.label9.TabIndex = 15;
             this.label9.Text = "Number";
             // 
-            // textBox3
+            // tbID
             // 
-            this.textBox3.Location = new System.Drawing.Point(1179, 94);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(92, 27);
-            this.textBox3.TabIndex = 16;
+            this.tbID.Location = new System.Drawing.Point(1179, 94);
+            this.tbID.Name = "tbID";
+            this.tbID.ReadOnly = true;
+            this.tbID.Size = new System.Drawing.Size(92, 27);
+            this.tbID.TabIndex = 16;
             // 
-            // textBox4
+            // tbTitle
             // 
-            this.textBox4.Location = new System.Drawing.Point(1179, 169);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(310, 27);
-            this.textBox4.TabIndex = 17;
+            this.tbTitle.Location = new System.Drawing.Point(1179, 169);
+            this.tbTitle.Name = "tbTitle";
+            this.tbTitle.Size = new System.Drawing.Size(310, 27);
+            this.tbTitle.TabIndex = 17;
             // 
-            // comboBox3
+            // cbCategory
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(1179, 262);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(151, 28);
-            this.comboBox3.TabIndex = 18;
+            this.cbCategory.FormattingEnabled = true;
+            this.cbCategory.Location = new System.Drawing.Point(1179, 262);
+            this.cbCategory.Name = "cbCategory";
+            this.cbCategory.Size = new System.Drawing.Size(151, 28);
+            this.cbCategory.TabIndex = 18;
             // 
-            // textBox5
+            // tbAuthor
             // 
-            this.textBox5.Location = new System.Drawing.Point(1179, 337);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(201, 27);
-            this.textBox5.TabIndex = 19;
+            this.tbAuthor.Location = new System.Drawing.Point(1179, 337);
+            this.tbAuthor.Name = "tbAuthor";
+            this.tbAuthor.Size = new System.Drawing.Size(201, 27);
+            this.tbAuthor.TabIndex = 19;
             // 
-            // dateTimePicker1
+            // dtpEntryDate
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(1179, 414);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(271, 27);
-            this.dateTimePicker1.TabIndex = 20;
+            this.dtpEntryDate.Location = new System.Drawing.Point(1179, 414);
+            this.dtpEntryDate.Name = "dtpEntryDate";
+            this.dtpEntryDate.Size = new System.Drawing.Size(271, 27);
+            this.dtpEntryDate.TabIndex = 20;
             // 
-            // numericUpDown1
+            // nudPrice
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(1180, 498);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.nudPrice.Location = new System.Drawing.Point(1180, 498);
+            this.nudPrice.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-            this.numericUpDown1.Minimum = new decimal(new int[] {
+            this.nudPrice.Minimum = new decimal(new int[] {
             10,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(150, 27);
-            this.numericUpDown1.TabIndex = 21;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.nudPrice.Name = "nudPrice";
+            this.nudPrice.Size = new System.Drawing.Size(150, 27);
+            this.nudPrice.TabIndex = 21;
+            this.nudPrice.Value = new decimal(new int[] {
             10,
             0,
             0,
             0});
             // 
-            // numericUpDown2
+            // nudNumber
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(1179, 579);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(150, 27);
-            this.numericUpDown2.TabIndex = 22;
+            this.nudNumber.Location = new System.Drawing.Point(1179, 579);
+            this.nudNumber.Name = "nudNumber";
+            this.nudNumber.Size = new System.Drawing.Size(150, 27);
+            this.nudNumber.TabIndex = 22;
             // 
             // label10
             // 
@@ -274,14 +288,54 @@
             this.label10.TabIndex = 23;
             this.label10.Text = ".000 VND";
             // 
-            // comboBox4
+            // cbSearchCate
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(781, 27);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(166, 28);
-            this.comboBox4.TabIndex = 24;
-            this.comboBox4.Text = "All Category";
+            this.cbSearchCate.FormattingEnabled = true;
+            this.cbSearchCate.Location = new System.Drawing.Point(781, 27);
+            this.cbSearchCate.Name = "cbSearchCate";
+            this.cbSearchCate.Size = new System.Drawing.Size(166, 28);
+            this.cbSearchCate.TabIndex = 24;
+            this.cbSearchCate.Text = "All Category";
+            // 
+            // btAdd
+            // 
+            this.btAdd.Location = new System.Drawing.Point(1071, 683);
+            this.btAdd.Name = "btAdd";
+            this.btAdd.Size = new System.Drawing.Size(94, 29);
+            this.btAdd.TabIndex = 25;
+            this.btAdd.Text = "Add New";
+            this.btAdd.UseVisualStyleBackColor = true;
+            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
+            // 
+            // btUpdate
+            // 
+            this.btUpdate.Location = new System.Drawing.Point(1245, 683);
+            this.btUpdate.Name = "btUpdate";
+            this.btUpdate.Size = new System.Drawing.Size(94, 29);
+            this.btUpdate.TabIndex = 26;
+            this.btUpdate.Text = "Update";
+            this.btUpdate.UseVisualStyleBackColor = true;
+            this.btUpdate.Click += new System.EventHandler(this.btUpdate_Click);
+            // 
+            // btDelete
+            // 
+            this.btDelete.Location = new System.Drawing.Point(1422, 683);
+            this.btDelete.Name = "btDelete";
+            this.btDelete.Size = new System.Drawing.Size(94, 29);
+            this.btDelete.TabIndex = 27;
+            this.btDelete.Text = "Delete";
+            this.btDelete.UseVisualStyleBackColor = true;
+            this.btDelete.Click += new System.EventHandler(this.btDelete_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(1342, 262);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(128, 29);
+            this.button3.TabIndex = 28;
+            this.button3.Text = "Add Category";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // frmBookList
             // 
@@ -289,15 +343,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1582, 819);
-            this.Controls.Add(this.comboBox4);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btDelete);
+            this.Controls.Add(this.btUpdate);
+            this.Controls.Add(this.btAdd);
+            this.Controls.Add(this.cbSearchCate);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.numericUpDown2);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.nudNumber);
+            this.Controls.Add(this.nudPrice);
+            this.Controls.Add(this.dtpEntryDate);
+            this.Controls.Add(this.tbAuthor);
+            this.Controls.Add(this.cbCategory);
+            this.Controls.Add(this.tbTitle);
+            this.Controls.Add(this.tbID);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -320,8 +378,8 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmBookList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNumber)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -345,14 +403,18 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.TextBox tbID;
+        private System.Windows.Forms.TextBox tbTitle;
+        private System.Windows.Forms.ComboBox cbCategory;
+        private System.Windows.Forms.TextBox tbAuthor;
+        private System.Windows.Forms.DateTimePicker dtpEntryDate;
+        private System.Windows.Forms.NumericUpDown nudPrice;
+        private System.Windows.Forms.NumericUpDown nudNumber;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox cbSearchCate;
+        private System.Windows.Forms.Button btAdd;
+        private System.Windows.Forms.Button btUpdate;
+        private System.Windows.Forms.Button btDelete;
+        private System.Windows.Forms.Button button3;
     }
 }

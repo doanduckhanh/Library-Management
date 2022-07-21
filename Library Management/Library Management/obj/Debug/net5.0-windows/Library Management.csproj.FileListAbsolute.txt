@@ -63,8 +63,10 @@ C:\Users\khanh doan\Desktop\Project PRN\Library-Management\Library Management\Li
 C:\Users\khanh doan\Desktop\Project PRN\Library-Management\Library Management\Library Management\obj\Debug\net5.0-windows\Library Management.genruntimeconfig.cache
 C:\Users\khanh doan\Desktop\Project PRN\Library-Management\Library Management\Library Management\obj\Debug\net5.0-windows\ref\Library Management.dll
 C:\Users\khanh doan\Desktop\Project PRN\Library-Management\Library Management\Library Management\obj\Debug\net5.0-windows\Library_Management.Properties.Resources.resources
-C:\Users\khanh doan\Desktop\Project PRN\Library-Management\Library Management\Library Management\obj\Debug\net5.0-windows\Library_Management.frmBookDetail.resources
 C:\Users\khanh doan\Desktop\Project PRN\Library-Management\Library Management\Library Management\obj\Debug\net5.0-windows\Library_Management.frmMain.resources
 C:\Users\khanh doan\Desktop\Project PRN\Library-Management\Library Management\Library Management\bin\Debug\net5.0-windows\ExcelDataReader.dll
 C:\Users\khanh doan\Desktop\Project PRN\Library-Management\Library Management\Library Management\bin\Debug\net5.0-windows\ExcelDataReader.DataSet.dll
 C:\Users\khanh doan\Desktop\Project PRN\Library-Management\Library Management\Library Management\obj\Debug\net5.0-windows\Library_Management.frmBookList.resources
+C:\Users\khanh doan\Desktop\Project PRN\Library-Management\Library Management\Library Management\obj\Debug\net5.0-windows\Library_Management.frmCustomerList.resources
+C:\Users\khanh doan\Desktop\Project PRN\Library-Management\Library Management\Library Management\obj\Debug\net5.0-windows\Library_Management.frmCusDetail.resources
+C:\Users\khanh doan\Desktop\Project PRN\Library-Management\Library Management\Library Management\obj\Debug\net5.0-windows\Library_Management.frmCategory.resources
