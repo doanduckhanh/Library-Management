@@ -43,5 +43,11 @@ namespace Library_Management
             dataGridView2.Columns["emailcol"].DataPropertyName = "Email";
             dataGridView2.DataSource = customerManager.GetCusList();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            frmCusDetail frmCusDetail = new frmCusDetail();
+            frmCusDetail.ShowDialog();
+        }
     }
 }

@@ -35,6 +35,7 @@ namespace Library_Management
             cbCategory.DataSource = context.Categories.Select(x => x.CateName).ToList();
             cbSearchCate.DataSource = context.Categories.Select(x => x.CateName).ToList();
             cbSearchCate.SelectedIndex = 0;
+            cbSearch.SelectedIndex = 0;
             LDGV();
         }
         private void frmBookList_Load(object sender, EventArgs e)
@@ -71,7 +72,7 @@ namespace Library_Management
                 DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
                 tbID.Text = row.Cells[0].Value.ToString();
                 tbTitle.Text = row.Cells[1].Value.ToString();
-                cbCategory.SelectedIndex = Convert.ToInt32(row.Cells[2].Value);
+                cbCategory.SelectedIndex = Convert.ToInt32(row.Cells[2].Value)-1;
                 tbAuthor.Text = row.Cells[3].Value.ToString();
                 nudNumber.Value = Convert.ToInt32(row.Cells[4].Value.ToString());
                 dtpEntryDate.Value = Convert.ToDateTime(row.Cells[5].Value.ToString());
@@ -90,6 +91,7 @@ namespace Library_Management
             {
                 Book a = new Book();
                 BookManager bookManager = new BookManager();
+                CategoryManager categoryManager = new CategoryManager();
                 a.Name = tbTitle.Text.Trim();
                 a.CategoryId = cbCategory.SelectedIndex+1;
                 a.Author = tbAuthor.Text.Trim();
@@ -163,6 +165,18 @@ namespace Library_Management
             frmCategory.ShowDialog();
             LibraryDbContext context = new LibraryDbContext();
             cbCategory.DataSource = context.Categories.Select(x => x.CateName).ToList();
+        }
+
+        private void cbSearchCate_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            BookManager bookManager = new BookManager();
+            dataGridView1.DataSource = bookManager.GetBookListByCate(cbSearchCate.SelectedIndex+1);
+        }
+
+        private void btSearch_Click(object sender, EventArgs e)
+        {
+            BookManager bookManager =new BookManager();
+            dataGridView1.DataSource = bookManager.Search(cbSearch.Text, tbSearch.Text);
         }
     }
 }

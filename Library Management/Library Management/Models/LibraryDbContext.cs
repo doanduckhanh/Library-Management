@@ -39,45 +39,37 @@ namespace Library_Management.Models
             {
                 entity.ToTable("Book");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("ID");
+                entity.Property(e => e.Id).HasColumnName("ID");
 
-                entity.Property(e => e.Author)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .IsFixedLength(true);
+                entity.Property(e => e.Author).IsRequired();
 
                 entity.Property(e => e.CategoryId).HasColumnName("CategoryID");
 
                 entity.Property(e => e.EntryDate).HasColumnType("date");
 
-                entity.Property(e => e.Name)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .IsFixedLength(true);
+                entity.Property(e => e.Name).IsRequired();
 
                 entity.HasOne(d => d.Category)
                     .WithMany(p => p.Books)
                     .HasForeignKey(d => d.CategoryId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Book_Categories");
+                    .HasConstraintName("FK_BookCategory");
             });
 
             modelBuilder.Entity<Category>(entity =>
             {
-                entity.HasKey(e => e.CateId);
+                entity.HasKey(e => e.CateId)
+                    .HasName("PK__Categori__27638D74E627CCF5");
 
                 entity.Property(e => e.CateId).HasColumnName("CateID");
 
-                entity.Property(e => e.CateName)
-                    .IsRequired()
-                    .HasMaxLength(50);
+                entity.Property(e => e.CateName).IsRequired();
             });
 
             modelBuilder.Entity<Customer>(entity =>
             {
-                entity.HasKey(e => e.CusId);
+                entity.HasKey(e => e.CusId)
+                    .HasName("PK__Customer__2F1871307C17E282");
 
                 entity.ToTable("Customer");
 
@@ -85,36 +77,27 @@ namespace Library_Management.Models
                     .HasMaxLength(50)
                     .HasColumnName("CusID");
 
-                entity.Property(e => e.Address)
-                    .IsRequired()
-                    .HasMaxLength(50);
+                entity.Property(e => e.Address).IsRequired();
 
                 entity.Property(e => e.Birth).HasColumnType("date");
 
-                entity.Property(e => e.City)
-                    .IsRequired()
-                    .HasMaxLength(50);
+                entity.Property(e => e.City).IsRequired();
 
-                entity.Property(e => e.Email)
-                    .IsRequired()
-                    .HasMaxLength(50);
+                entity.Property(e => e.Email).IsRequired();
 
-                entity.Property(e => e.Name)
-                    .IsRequired()
-                    .HasMaxLength(50);
+                entity.Property(e => e.Name).IsRequired();
 
                 entity.Property(e => e.Phone)
                     .IsRequired()
                     .HasMaxLength(50);
 
-                entity.Property(e => e.State)
-                    .IsRequired()
-                    .HasMaxLength(50);
+                entity.Property(e => e.State).IsRequired();
             });
 
             modelBuilder.Entity<Order>(entity =>
             {
-                entity.HasKey(e => e.OrId);
+                entity.HasKey(e => e.OrId)
+                    .HasName("PK__Order__E16496480EC01BB8");
 
                 entity.ToTable("Order");
 
@@ -135,13 +118,13 @@ namespace Library_Management.Models
                     .WithMany(p => p.Orders)
                     .HasForeignKey(d => d.BookId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Order_Book");
+                    .HasConstraintName("FK_BookOrder");
 
                 entity.HasOne(d => d.Cus)
                     .WithMany(p => p.Orders)
                     .HasForeignKey(d => d.CusId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Order_Customer");
+                    .HasConstraintName("FK_CustomerOrder");
             });
 
             OnModelCreatingPartial(modelBuilder);

@@ -30,11 +30,9 @@
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.tbSearch = new System.Windows.Forms.TextBox();
+            this.btSearch = new System.Windows.Forms.Button();
+            this.cbSearch = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -77,60 +75,41 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(28, 30);
+            this.label1.Location = new System.Drawing.Point(12, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Search";
             // 
-            // textBox1
+            // tbSearch
             // 
-            this.textBox1.Location = new System.Drawing.Point(84, 26);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(157, 27);
-            this.textBox1.TabIndex = 2;
+            this.tbSearch.Location = new System.Drawing.Point(71, 27);
+            this.tbSearch.Name = "tbSearch";
+            this.tbSearch.Size = new System.Drawing.Size(157, 27);
+            this.tbSearch.TabIndex = 2;
             // 
-            // button1
+            // btSearch
             // 
-            this.button1.Location = new System.Drawing.Point(360, 26);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 29);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Search";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btSearch.Location = new System.Drawing.Point(347, 25);
+            this.btSearch.Name = "btSearch";
+            this.btSearch.Size = new System.Drawing.Size(94, 29);
+            this.btSearch.TabIndex = 3;
+            this.btSearch.Text = "Search";
+            this.btSearch.UseVisualStyleBackColor = true;
+            this.btSearch.Click += new System.EventHandler(this.btSearch_Click);
             // 
-            // comboBox1
+            // cbSearch
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbSearch.FormattingEnabled = true;
+            this.cbSearch.Items.AddRange(new object[] {
             "Id",
             "Name",
-            "Category",
             "Author",
-            "Number",
-            "EntryDate",
-            "Price"});
-            this.comboBox1.Location = new System.Drawing.Point(247, 26);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(107, 28);
-            this.comboBox1.TabIndex = 4;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(508, 30);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 20);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Sort by";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(570, 27);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(151, 28);
-            this.comboBox2.TabIndex = 6;
+            "EntryDate"});
+            this.cbSearch.Location = new System.Drawing.Point(234, 26);
+            this.cbSearch.Name = "cbSearch";
+            this.cbSearch.Size = new System.Drawing.Size(107, 28);
+            this.cbSearch.TabIndex = 4;
             // 
             // button2
             // 
@@ -291,11 +270,12 @@
             // cbSearchCate
             // 
             this.cbSearchCate.FormattingEnabled = true;
-            this.cbSearchCate.Location = new System.Drawing.Point(781, 27);
+            this.cbSearchCate.Location = new System.Drawing.Point(565, 27);
             this.cbSearchCate.Name = "cbSearchCate";
             this.cbSearchCate.Size = new System.Drawing.Size(166, 28);
             this.cbSearchCate.TabIndex = 24;
             this.cbSearchCate.Text = "All Category";
+            this.cbSearchCate.SelectedIndexChanged += new System.EventHandler(this.cbSearchCate_SelectedIndexChanged);
             // 
             // btAdd
             // 
@@ -365,11 +345,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.cbSearch);
+            this.Controls.Add(this.btSearch);
+            this.Controls.Add(this.tbSearch);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -389,11 +367,9 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.TextBox tbSearch;
+        private System.Windows.Forms.Button btSearch;
+        private System.Windows.Forms.ComboBox cbSearch;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label3;
