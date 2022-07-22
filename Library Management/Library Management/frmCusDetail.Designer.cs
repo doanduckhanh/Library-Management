@@ -160,6 +160,7 @@
             this.btUpdate.TabIndex = 17;
             this.btUpdate.Text = "Update";
             this.btUpdate.UseVisualStyleBackColor = false;
+            this.btUpdate.Click += new System.EventHandler(this.btUpdate_Click);
             // 
             // btDelete
             // 
@@ -170,6 +171,7 @@
             this.btDelete.TabIndex = 18;
             this.btDelete.Text = "Delete";
             this.btDelete.UseVisualStyleBackColor = false;
+            this.btDelete.Click += new System.EventHandler(this.btDelete_Click);
             // 
             // btAdd
             // 

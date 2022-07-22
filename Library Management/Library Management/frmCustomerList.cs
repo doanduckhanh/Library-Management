@@ -51,5 +51,17 @@ namespace Library_Management
             CustomerManager customerManager = new CustomerManager();
             dataGridView2.DataSource = customerManager.GetCusList();
         }
+
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dataGridView2.Rows[e.RowIndex];
+                frmCusDetail Child = new frmCusDetail(row.Cells[0].Value.ToString());
+                Child.ShowDialog();
+            }
+            CustomerManager customerManager = new CustomerManager();
+            dataGridView2.DataSource = customerManager.GetCusList();
+        }
     }
 }

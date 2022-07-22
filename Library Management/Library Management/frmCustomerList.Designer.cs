@@ -34,7 +34,7 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbSortBy = new System.Windows.Forms.ComboBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -50,6 +50,7 @@
             this.dataGridView2.RowTemplate.Height = 29;
             this.dataGridView2.Size = new System.Drawing.Size(1269, 726);
             this.dataGridView2.TabIndex = 0;
+            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             // 
             // label1
             // 
@@ -93,15 +94,13 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Sort By";
             // 
-            // comboBox2
+            // cbSortBy
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "All category"});
-            this.comboBox2.Location = new System.Drawing.Point(877, 28);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(178, 28);
-            this.comboBox2.TabIndex = 6;
+            this.cbSortBy.FormattingEnabled = true;
+            this.cbSortBy.Location = new System.Drawing.Point(877, 28);
+            this.cbSortBy.Name = "cbSortBy";
+            this.cbSortBy.Size = new System.Drawing.Size(178, 28);
+            this.cbSortBy.TabIndex = 6;
             // 
             // textBox2
             // 
@@ -138,7 +137,7 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.cbSortBy);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox1);
@@ -164,7 +163,7 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbSortBy;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
