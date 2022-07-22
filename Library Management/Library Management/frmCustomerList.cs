@@ -48,6 +48,8 @@ namespace Library_Management
         {
             frmCusDetail frmCusDetail = new frmCusDetail();
             frmCusDetail.ShowDialog();
+            CustomerManager customerManager = new CustomerManager();
+            dataGridView2.DataSource = customerManager.GetCusList();
         }
     }
 }

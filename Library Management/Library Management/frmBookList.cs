@@ -98,8 +98,12 @@ namespace Library_Management
                 a.Number = Convert.ToInt32(nudNumber.Value);
                 a.Price = Convert.ToInt32(nudPrice.Value);
                 a.EntryDate = Convert.ToDateTime(dtpEntryDate.Value);
-                bookManager.AddBook(a);
-                LDGV();
+                DialogResult dialogResult = MessageBox.Show("Are You Sure To Add This Book ?", "Confirm", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    bookManager.AddBook(a);
+                    LoadEmpty();
+                }
             }
         }
 

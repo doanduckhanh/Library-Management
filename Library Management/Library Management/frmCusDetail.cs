@@ -1,4 +1,5 @@
-﻿using Library_Management.Models;
+﻿using Library_Management.Logics;
+using Library_Management.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -35,6 +36,7 @@ namespace Library_Management
                 ;
             } else
             {
+                CustomerManager customerManager = new CustomerManager();
                 Customer c =new Customer();
                 c.CusId = tbID.Text;
                 c.Name = tbFullName.Text;
@@ -51,6 +53,12 @@ namespace Library_Management
                 c.Birth = dtpDob.Value;
                 c.Phone = tbPhone.Text;
                 c.Email = tbEmail.Text;
+                DialogResult dialogResult = MessageBox.Show("Are You Sure To Add This Customer ?", "Confirm", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    customerManager.AddCus(c);
+                    this.Close();
+                }
             }
             
         }

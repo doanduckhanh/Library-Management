@@ -20,5 +20,11 @@ namespace Library_Management.Logics
         {
             return db.Customers.ToList();
         }
+        public void AddCus(Customer c)
+        {
+            db.Customers.Add(c);
+            db.SaveChanges();
+        }
+
     }
 }
