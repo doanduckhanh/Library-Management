@@ -70,3 +70,7 @@ C:\Users\khanh doan\Desktop\Project PRN\Library-Management\Library Management\Li
 C:\Users\khanh doan\Desktop\Project PRN\Library-Management\Library Management\Library Management\obj\Debug\net5.0-windows\Library_Management.frmCustomerList.resources
 C:\Users\khanh doan\Desktop\Project PRN\Library-Management\Library Management\Library Management\obj\Debug\net5.0-windows\Library_Management.frmCusDetail.resources
 C:\Users\khanh doan\Desktop\Project PRN\Library-Management\Library Management\Library Management\obj\Debug\net5.0-windows\Library_Management.frmCategory.resources
+C:\Users\khanh doan\Desktop\Project PRN\Library-Management\Library Management\Library Management\obj\Debug\net5.0-windows\Library_Management.frmOrderList.resources
+C:\Users\khanh doan\Desktop\Project PRN\Library-Management\Library Management\Library Management\obj\Debug\net5.0-windows\Library_Management.frmBookDetail.resources
+C:\Users\khanh doan\Desktop\Project PRN\Library-Management\Library Management\Library Management\obj\Debug\net5.0-windows\Library_Management.frmPendingList.resources
+C:\Users\khanh doan\Desktop\Project PRN\Library-Management\Library Management\Library Management\obj\Debug\net5.0-windows\Library_Management.frmImport.resources
