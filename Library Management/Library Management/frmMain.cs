@@ -25,22 +25,7 @@ namespace Library_Management
             
 
             /*
-            //Load Data for Order
-            OrderManager orderManager = new OrderManager();
-            dataGridView3.AutoGenerateColumns = false;
-            dataGridView3.Columns.Add("idcol", "Id");
-            dataGridView3.Columns["idcol"].DataPropertyName = "OrID";
-            dataGridView3.Columns.Add("cusidcol", "CustomerID");
-            dataGridView3.Columns["cusidcol"].DataPropertyName = "CusID";
-            dataGridView3.Columns.Add("bookidcol", "BookID");
-            dataGridView3.Columns["bookidcol"].DataPropertyName = "BookID";
-            dataGridView3.Columns.Add("startcol", "StartDate");
-            dataGridView3.Columns["startcol"].DataPropertyName = "StartDat";
-            dataGridView3.Columns.Add("endcol", "EndDate");
-            dataGridView3.Columns["endcol"].DataPropertyName = "EndDate";
-            dataGridView3.Columns.Add("statuscol", "Status");
-            dataGridView3.Columns["statuscol"].DataPropertyName = "Status";
-            dataGridView3.DataSource = orderManager.GetOrderList();*/
+            */
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -86,6 +71,18 @@ namespace Library_Management
         private void customerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmCustomerList f = new frmCustomerList();
+            AddForm(f);
+        }
+
+        private void orderBookToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmOrderList f = new frmOrderList();
+            AddForm(f);
+        }
+
+        private void pendingOrderListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPendingList f =new frmPendingList();
             AddForm(f);
         }
     }

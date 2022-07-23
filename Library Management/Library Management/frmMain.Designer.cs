@@ -36,9 +36,17 @@
             this.bookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.orderBookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pendingOrderListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnBook = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
+            this.pnBook.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -66,13 +74,13 @@
             // somethingToolStripMenuItem
             // 
             this.somethingToolStripMenuItem.Name = "somethingToolStripMenuItem";
-            this.somethingToolStripMenuItem.Size = new System.Drawing.Size(164, 26);
-            this.somethingToolStripMenuItem.Text = "Something";
+            this.somethingToolStripMenuItem.Size = new System.Drawing.Size(133, 26);
+            this.somethingToolStripMenuItem.Text = "Home";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(164, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(133, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -81,7 +89,8 @@
             this.manageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bookToolStripMenuItem,
             this.customerToolStripMenuItem,
-            this.orderBookToolStripMenuItem});
+            this.orderBookToolStripMenuItem,
+            this.pendingOrderListToolStripMenuItem});
             this.manageToolStripMenuItem.Name = "manageToolStripMenuItem";
             this.manageToolStripMenuItem.Size = new System.Drawing.Size(77, 24);
             this.manageToolStripMenuItem.Text = "Manage";
@@ -89,22 +98,30 @@
             // bookToolStripMenuItem
             // 
             this.bookToolStripMenuItem.Name = "bookToolStripMenuItem";
-            this.bookToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.bookToolStripMenuItem.Size = new System.Drawing.Size(213, 26);
             this.bookToolStripMenuItem.Text = "Book";
             this.bookToolStripMenuItem.Click += new System.EventHandler(this.bookToolStripMenuItem_Click);
             // 
             // customerToolStripMenuItem
             // 
             this.customerToolStripMenuItem.Name = "customerToolStripMenuItem";
-            this.customerToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.customerToolStripMenuItem.Size = new System.Drawing.Size(213, 26);
             this.customerToolStripMenuItem.Text = "Customer";
             this.customerToolStripMenuItem.Click += new System.EventHandler(this.customerToolStripMenuItem_Click);
             // 
             // orderBookToolStripMenuItem
             // 
             this.orderBookToolStripMenuItem.Name = "orderBookToolStripMenuItem";
-            this.orderBookToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.orderBookToolStripMenuItem.Size = new System.Drawing.Size(213, 26);
             this.orderBookToolStripMenuItem.Text = "Order Book";
+            this.orderBookToolStripMenuItem.Click += new System.EventHandler(this.orderBookToolStripMenuItem_Click);
+            // 
+            // pendingOrderListToolStripMenuItem
+            // 
+            this.pendingOrderListToolStripMenuItem.Name = "pendingOrderListToolStripMenuItem";
+            this.pendingOrderListToolStripMenuItem.Size = new System.Drawing.Size(213, 26);
+            this.pendingOrderListToolStripMenuItem.Text = "Pending Order List";
+            this.pendingOrderListToolStripMenuItem.Click += new System.EventHandler(this.pendingOrderListToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -115,10 +132,53 @@
             // pnBook
             // 
             this.pnBook.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnBook.Controls.Add(this.label2);
+            this.pnBook.Controls.Add(this.pictureBox2);
+            this.pnBook.Controls.Add(this.label1);
+            this.pnBook.Controls.Add(this.pictureBox1);
             this.pnBook.Location = new System.Drawing.Point(0, 28);
             this.pnBook.Name = "pnBook";
             this.pnBook.Size = new System.Drawing.Size(1582, 825);
             this.pnBook.TabIndex = 13;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Showcard Gothic", 48F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(624, 239);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(934, 98);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Library Management";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Library_Management.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(95, 76);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(465, 407);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Library_Management.Properties.Resources._6abe613c75eaf21c3191325c5d28c05a;
+            this.pictureBox2.Location = new System.Drawing.Point(624, 473);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(251, 223);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Symbol", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(898, 525);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(596, 81);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Have the good time!";
             // 
             // frmMain
             // 
@@ -135,6 +195,10 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.pnBook.ResumeLayout(false);
+            this.pnBook.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -151,5 +215,10 @@
         private System.Windows.Forms.ToolStripMenuItem orderBookToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.Panel pnBook;
+        private System.Windows.Forms.ToolStripMenuItem pendingOrderListToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
