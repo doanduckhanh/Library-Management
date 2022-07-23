@@ -109,7 +109,7 @@ namespace Library_Management
 
         private void btUpdate_Click(object sender, EventArgs e)
         {
-            if (tbID.Text == "")
+            if (tbTitle.Text.ToString() == "" || tbAuthor.Text.ToString() == "" || nudNumber.Value == 0)
             {
                 MessageBox.Show("You must click a cell!", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -137,7 +137,7 @@ namespace Library_Management
 
         private void btDelete_Click(object sender, EventArgs e)
         {
-            if (tbID.Text == "")
+            if (tbTitle.Text.ToString() == "" || tbAuthor.Text.ToString() == "" || nudNumber.Value == 0)
             {
                 MessageBox.Show("You must click a cell!", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -181,6 +181,12 @@ namespace Library_Management
         {
             BookManager bookManager =new BookManager();
             dataGridView1.DataSource = bookManager.Search(cbSearch.Text, tbSearch.Text);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+           frmImport frmImport = new frmImport();
+            frmImport.ShowDialog();
         }
     }
 }
