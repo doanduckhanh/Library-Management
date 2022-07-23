@@ -66,5 +66,9 @@ namespace Library_Management.Logics
             }
             else return null;
         }
+        public Book GetBook(string id)
+        {
+            return db.Books.FirstOrDefault(x => x.Id == Convert.ToUInt32(id));
+        }
     }
 }
