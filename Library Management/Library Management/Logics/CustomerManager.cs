@@ -47,5 +47,41 @@ namespace Library_Management.Logics
             db.Customers.RemoveRange(c);
             db.SaveChanges();
         }
+        public List<Customer> SearchCustomer(string key, string search)
+        {
+            if (key.Equals("Id"))
+            {
+                return db.Customers.Where(x => x.CusId.Contains(search)).ToList();
+            }
+            else if (key.Equals("Name"))
+            {
+                return db.Customers.Where(x => x.Name.Contains(search)).ToList();
+            }
+            else if (key.Equals("Address"))
+            {
+                return db.Customers.Where(x => x.Address.Contains(search)).ToList();
+            }
+            else if (key.Equals("State"))
+            {
+                return db.Customers.Where(x => x.State.Contains(search)).ToList();
+            }
+            else if (key.Equals("City"))
+            {
+                return db.Customers.Where(x => x.City.Contains(search)).ToList();
+            }
+            else if (key.Equals("Dob"))
+            {
+                return db.Customers.Where(x => x.Birth.ToString().Contains(search)).ToList();
+            }
+            else if (key.Equals("Phone"))
+            {
+                return db.Customers.Where(x => x.Phone.Contains(search)).ToList();
+            }
+            else if (key.Equals("Email"))
+            {
+                return db.Customers.Where(x => x.Email.Contains(search)).ToList();
+            }
+            else return null;
+        }
     }
 }
