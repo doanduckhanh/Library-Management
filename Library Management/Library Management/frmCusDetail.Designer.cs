@@ -263,7 +263,7 @@
             this.Controls.Add(this.tbID);
             this.Name = "frmCusDetail";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Book Detail";
+            this.Text = "Customer Detail";
             this.Load += new System.EventHandler(this.BookDetail_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

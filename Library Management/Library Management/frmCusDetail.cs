@@ -23,6 +23,7 @@ namespace Library_Management
             string _id = id;
             tbID.Text = _id;
             tbID.ReadOnly = true;
+            btAdd.Visible = false;
             CustomerManager customerManager = new CustomerManager();
             Customer c = customerManager.GetCustomer(_id);
             tbFullName.Text = c.Name;
